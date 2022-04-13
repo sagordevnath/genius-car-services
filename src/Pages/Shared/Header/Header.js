@@ -1,17 +1,18 @@
 import React from 'react';
 import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logo from '../../../Images/logo.png'
 
 const Header = () => {
     return (
-        <Navbar sticky="top" className='py-4' bg="info" expand="lg">
+        <Navbar sticky="top" className='py-2' bg="info" expand="lg">
   <Container fluid>
-    <Navbar.Brand href="#home">
+    <Navbar.Brand as={Link} to="/">
         <img
           alt=""
           src={logo}
-          width="130"
-          height="50"
+          // width="130"
+          height="30"
           className="d-inline-block align-top"
         /></Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
@@ -21,10 +22,11 @@ const Header = () => {
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <Nav.Link href="#action1">Home</Nav.Link>
-        <Nav.Link href="#action1">Service</Nav.Link>
-        <Nav.Link href="#action1">Experts</Nav.Link>
-        <Nav.Link href="#action1">About</Nav.Link>
+        <Nav.Link as={Link} to="/">Home</Nav.Link>
+        <Nav.Link href="home#services">Services</Nav.Link>
+        <Nav.Link href="home#experts">Experts</Nav.Link>
+        <Nav.Link as={Link} to="/about">About</Nav.Link>
+        <Nav.Link as={Link} to="/Login">Login</Nav.Link>
         </Nav>
         
       <Form className="d-flex">
